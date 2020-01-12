@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('index', function () {
     return view('layouts.trangchu');
 });
+Route::get('dangnhap', function () {
+    return view('layouts.dangnhap');
+});

@@ -1,14 +1,11 @@
-/* Reset Code */
 body {
     padding: 0;
     margin: 0;
-    background: #FFF;
+    background: #EAFAF1;
     font-family: 'Open Sans', sans-serif;
 }
 
-body button,
-.btn,
-body a {
+body button, .btn, body a {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
@@ -16,8 +13,7 @@ body a {
     -ms-transition: 0.5s all;
 }
 
-.btn:hover,
-body button:hover {
+.btn:hover, body button:hover {
     opacity: .8;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -40,17 +36,14 @@ html {
     scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
+a{
+    font-family: 'starfall_blockregular', sans-serif;
+}
 p {
     margin: 0;
     padding: 0;
@@ -61,21 +54,17 @@ p {
     font-family: 'Open Sans', sans-serif;
 }
 
-ul,
-ol {
+ul,ol {
     margin: 0;
     padding: 0;
 }
 
-/* //Reset Code */
 
 /* colors code */
 .text-bl {
     color: #343a40;
 }
-.text-bl>a:hover{
-	color: red;
-}
+
 .text-wh {
     color: #fff;
 }
@@ -83,20 +72,28 @@ ol {
 .text-li {
     color: #f8f9fa;
 }
-.bg-green{
-	background: #08812B;
-}
+
 .bg-li {
     background: #f8f9fa;
 }
+
 .bg-wh {
     background: #fff;
 }
-.bg-wi{
-	background:#F2D2F5;
+.bg-m1{
+    background:#00703A; 
 }
-.bg-vi{
-	background:#AC82F3;
+.bg-m2{
+    background:#E9EF36; 
+}
+.bg-m3{
+    background:#579E3C;
+}
+.bg-m4{
+    background: #3FA119;
+}
+.bg-m5{
+    background: #D1F2EB;
 }
 .text-colors {
     color: #6c5ce7;
@@ -128,7 +125,6 @@ a.move-top {
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
-
 /* //bottom-to-top */
 
 /* header */
@@ -215,6 +211,7 @@ div#home {
 /* navigation */
 .nav_w3ls {
     margin-top: 2em;
+    margin-left: 0;
 }
 
 /* CSS Document */
@@ -239,6 +236,10 @@ nav {
     padding: 0;
 }
 
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
 nav:after {
     content: "";
     display: table;
@@ -256,22 +257,30 @@ nav ul {
 }
 
 /* Positioning the navigation items inline */
-nav ul li {
-    margin: 0px;
+nav>ul>li {
+    margin: 0;
     display: inline-block;
     float: left;
+    background-color: green;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 6px;
+}
+nav>ul>li:hover {
+    background-color: #F9D716;
 }
 /* Styling the links */
 nav a {
     margin: 0 12px;
-    color: #000;
-    font-size: 13px;
+    color: white;
+    font-size: 15px;
     letter-spacing: 2px;
-    font-weight: 400;
+
     text-transform: uppercase;
 }
-nav>ul>li>a:hover {
-    color: red;
+
+nav a:hover {
+    color: white;
 }
 
 /* Background color change on Hover */
@@ -281,9 +290,8 @@ nav>ul>li>a:hover {
 nav ul ul {
     display: none;
     position: absolute;
-    top: 25px;
-    background: #fff;
-    padding: 10px;
+    top: 2.4em;
+    background: #F19519;
     -webkit-border-radius: 4px;
     -o-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -297,10 +305,12 @@ nav ul ul {
 nav ul li:hover>ul {
     display: inherit;
 }
+
 /* Fisrt Tier Dropdown */
 nav ul ul li {
-    width: 190px;
+    width: 220px;
     float: none;
+    margin-top: 1px;
     display: list-item;
     position: relative;
     -webkit-border-radius: 4px;
@@ -313,10 +323,14 @@ nav ul ul li {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
+    background-color: #F9D716;
+    padding: 5px;
 }
-
+nav ul ul li:hover{
+    background-color: #F19519;
+}
 nav ul ul li a {
-    color: #000;
+    color: white;
     display: block;
     font-size: 13px;
     letter-spacing: 1px;
@@ -334,8 +348,23 @@ nav ul ul ul li {
     /* has to be the same number as the "width" of "nav ul ul li" */
     left: 170px;
 }
-
-
+@media all and (max-width: 1200px) and (min-width: 992px){
+    .nav_w3ls {
+        margin-top: 1.5em;
+    }
+      nav>ul>li {
+    margin-right: 2px;
+    padding: 3px;
+    }
+    nav ul ul {
+    top: 2em;
+    }
+    section.about-bottom {
+    margin-top: 2em;
+    z-index: 10;
+    position: relative;
+}
+}
 /* Change ' +' in order to change the Dropdown symbol */
 li>a:only-child:after {
     content: '';
@@ -362,7 +391,6 @@ a.reqe-button {
     .nav_w3ls {
         margin-top: 0;
     }
-
     #logo {
         display: block;
         padding: 0;
@@ -370,18 +398,14 @@ a.reqe-button {
         text-align: center;
         float: none;
     }
-
     nav {
         margin: 0;
     }
-
     /* Hide the navigation menu by default */
     /* Also hide the  */
-    .toggle+a,
-    .menu {
+    .toggle+a,.menu {
         display: none;
     }
-
     /* Stylinf the toggle lable */
     .toggle {
         display: block;
@@ -391,8 +415,7 @@ a.reqe-button {
         border: none;
         margin-top: 2em;
         float: right;
-        background-color: #fff;
-        color: #000;
+        color: white;
         font-weight: 700;
         border: 1px solid rgb(170, 161, 161);
         letter-spacing: 1px;
@@ -403,17 +426,35 @@ a.reqe-button {
         -o-transition: 0.5s all;
         -ms-transition: 0.5s all;
     }
-
+    .toggle3{
+        background-color: green;
+        display: block;
+        padding: 8px 14px;
+        font-size: 13px;
+        text-decoration: none;
+        border: none;
+        margin-top: 2em;
+        float: right;
+        color: white;
+        font-weight: 700;
+        border: 1px solid rgb(170, 161, 161);
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
     .menu .toggle {
         float: none;
         text-align: center;
         margin: auto;
-        max-width: 106px;
         padding: 5px;
         font-weight: normal;
         font-size: 14px;
         letter-spacing: 1px;
-        color: #000;
+        color: white;
         font-weight: 400;
         border: none;
         text-transform: uppercase;
@@ -426,8 +467,7 @@ a.reqe-button {
     /* Display Dropdown when clicked on Parent Lable */
     [id^=drop]:checked+ul {
         display: block;
-        background: #fff;
-        padding: 15px 0;
+        padding: 0;
         text-align: center;
         width: 100%;
     }
@@ -471,9 +511,10 @@ a.reqe-button {
     }
 
     nav ul ul li a {
-        color: #000;
+        color: white;
         font-size: 13px;
         padding: 0;
+        margin: 0;
     }
 }
 
@@ -608,7 +649,7 @@ a.navbar-brand {
     padding: 0;
     font-weight: 600;
     position: relative;
-    color: #F70909 ;
+    color: #41B220;
 }
 
 .navbar-light .navbar-brand {
@@ -648,6 +689,17 @@ a.login-button-2 span {
 
 /* banner */
 .banner1 {
+    height: 400px;
+    background: url(../images/1-lagre.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+@media all and (max-width : 1080px) and (min-width : 851px) {
+    .banner1 {
+    height: 350px;
     background: url(../images/1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -655,65 +707,29 @@ a.login-button-2 span {
     -o-background-size: cover;
     -moz-background-size: cover;
 }
-.banner2 {
-    background: url(../images/1.jpg) no-repeat center ;
+}
+@media all and (max-width : 850px) {
+    .banner1 {
+    height: 200px;
+    background: url(../images/1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
 }
-
-	
-/* banner text */
-.banner-info_w3ls {
-    padding: 12vw 0 22vw;
 }
-
-.banner-info_w3ls h5 {
-    font-size: 20px;
-    letter-spacing: 4px;
-}
-
-.banner-info_w3ls h3 {
-    font-size: 63px;
-    letter-spacing: 1px;
-    word-spacing: 6px;
-}
-
-.banner-info_w3ls h3 span {
-    color: #ff3f34;
-}
-
-.banner-info_w3ls p {
-    color: #f5f5f5;
-    letter-spacing: 2px;
-    font-size: 14px;
-    position: relative;
-}
-
-.banner-info_w3ls p:before {
-    position: absolute;
-    content: "";
-    background: #fff;
-    width: 60px;
-    height: 3px;
-    bottom: -47px;
-}
-
-/* //banner text */
 /* //banner */
 
 /* banner bottom grids */
 section.about-bottom {
-    margin-top: -17em;
+    margin-top: -2em;
     z-index: 10;
     position: relative;
 }
 
 .bg-colors {
-	background-color: #C8F5F9;
-    box-shadow: 0 12px 60px rgb(0, 0, 0, .2);
+    box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
     -webkit-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
     -o-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
     -moz-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
@@ -724,8 +740,9 @@ section.about-bottom {
     position: relative;
     z-index: 0;
 }
-.service-subgrids:hover {
-    border-radius: 60px;
+.service-subgrids:hover{
+    border-radius: 50px;
+    background: #64BC9D;
 }
 .service-subgrids span {
     position: absolute;
@@ -742,228 +759,6 @@ section.about-bottom {
 }
 
 /* //banner bottom grids */
-
-/* stats */
-.stats-icon-w3pvt {
-    background: #6c5ce7;
-    width: 65px;
-    height: 65px;
-    -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.stats-icon-w3pvt span {
-    font-size: 30px;
-    line-height: 2.1;
-    color: #fff;
-}
-
-.counter {
-    font-size: 40px;
-    line-height: 1.2;
-}
-
-/* //stats */
-
-/* professors */
-.teams {
-    background: url(../images/bg3.jpg) no-repeat center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-}
-
-.top-tem {
-    margin-top: 4em;
-}
-
-.team-grid {
-    width: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.17);
-    -webkit-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -o-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -ms-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-}
-
-.team-img {
-    position: relative;
-}
-
-.team-img:after {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 34%;
-    content: " ";
-    position: absolute;
-    background: rgba(0, 0, 0, 0);
-    transition-duration: 300ms;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-}
-
-.team-img img {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.team-info {
-    left: auto;
-    bottom: 0;
-    width: 100%;
-    padding: 0 20px;
-    position: absolute;
-    opacity: 0;
-    color: #fff;
-    -webkit-transform: translate3d(0, 10%, 0);
-    transform: translate3d(0, 10%, 0);
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -ms-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-}
-
-.team-info h4 {
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.team-grid:hover .team-img:after {
-    background: rgba(0, 0, 0, 0.82);
-    transition-duration: 300ms;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-}
-
-.team-grid:hover .team-info {
-    -webkit-transform: translate3d(0, -5%, 0);
-    transform: translate3d(0, -5%, 0);
-    -webkit-transform: translate3d(0, -10%, 0);
-    transform: translate3d(0, -10%, 0);
-}
-
-.team-grid:hover .team-info {
-    opacity: 1;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-ul.social-icons li {
-    list-style-type: none;
-}
-
-ul.social-icons li {
-    border: 1px solid #eee;
-    width: 30px;
-    height: 30px;
-    margin: 0 4px;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-ul.social-icons li a span {
-    color: #fff;
-    line-height: 2.2;
-    font-size: 13px;
-}
-
-ul.social-icons li.effect-soc-team1 {
-    background: #3b5998;
-    border: 1px solid #3b5998;
-}
-
-ul.social-icons li.effect-soc-team2 {
-    background: #1da1f2;
-    border: 1px solid #1da1f2;
-}
-
-ul.social-icons li.effect-soc-team3 {
-    background: #dd4b39;
-    border: 1px solid #dd4b39;
-}
-
-ul.social-icons li:hover {
-    opacity: .8;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-/* //professors */
-
-/* who we are */
-.who-left-w3pvt {
-    padding: 0 6em !important;
-}
-
-ul.who-lists li span {
-    margin-right: 10px;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-ul.who-lists li:hover span {
-    margin-right: 20px;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-h4.progress-tittle {
-    color: #464545;
-    font-size: 16px;
-    margin-bottom: 12px;
-}
-
-.progress-effect {
-    height: 10px;
-    background-color: #e9ecef;
-    -webkit-border-radius: 0.25rem;
-    -o-border-radius: 0.25rem;
-    -ms-border-radius: 0.25rem;
-    -moz-border-radius: 0.25rem;
-    border-radius: 0.25rem;
-}
-
-.progress-effect-1 {
-    background-color: #dc3545;
-}
-
-.progress-effect-2 {
-    background-color: #ffc107;
-}
-
-.progress-effect-3 {
-    background-color: #17a2b8;
-}
-
-/* //who we are */
 
 /* blog */
 span.post-icon {
@@ -1001,9 +796,6 @@ h5.blog-title a:hover {
 /* //blog */
 
 /* footer */
-footer{
-	background-color: #229BB1;
-}
 .footer-grid h3 {
     font-size: 22px;
     color: #fff;
@@ -1064,8 +856,6 @@ p.copy-right-grids a:hover {
 
 /* brands */
 .main-brand {
-    padding: 0;
-    background-color: #003d66;
 }
 
 .main-brand span {
@@ -1076,19 +866,6 @@ p.copy-right-grids a:hover {
 .main-brand h5 {
     color: #fff;
 }
-
-.bg-black {
-    background: #252525;
-}
-
-.bg-grey {
-    background: #000;
-}
-
-.bg-dark2 {
-    background: #383838;
-}
-
 /* //brands */
 
 /* newsletter */
@@ -1551,6 +1328,17 @@ h2.text-bg-click a {
     .counter {
         font-size: 30px;
     }
+    .main-brand {
+        padding: 0;
+    }
+
+    .main-brand span {
+        font-size: 16px;
+    }
+
+    .main-brand h5 {
+        font-size: 8px;
+    }
 }
 
 @media(max-width: 414px) {
@@ -1633,5 +1421,37 @@ h2.text-bg-click a {
         width: 80%;
     }
 }
-
 /* //responsive */
+footer{
+    text-align: center;
+    margin-top: 1em;
+}
+.footer-nav>a{
+    font-size: 1,25em;
+    color: #008040;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 30px;
+    font-family: starfall_blockbold,sans-serif;
+    border-right: 2px solid #32cd32;
+    margin: 5px auto 20px;
+}
+.footer-nav>a:hover{
+    text-decoration: underline;
+    color: #008040;
+}
+#last{
+    border-right: 0;
+}
+
+@media all and (max-width : 600px) {
+    .footer-nav>a{
+        font-size: 10px;
+        color: #008040;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 5px 0 5px;
+        font-family: starfall_blockbold,sans-serif;
+        border-right: 2px solid #32cd32;
+    }
+}
