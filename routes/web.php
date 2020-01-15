@@ -15,9 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', function () {
-    return view('layouts.trangchu');
-});
+Route::get('index',['uses'=>'mycontroller@monhoc']);
 Route::get('dangnhap', function () {
-    return view('layouts.dangnhap');
+    return view('layouts.content.dangnhap');
 });
+Route::get('dangky', function () {
+    return view('layouts.content.dangky');
+});
+Route::get('lienhe', function () {
+    return view('layouts.content.lienhe');
+});
+Route::get('gopy', function () {
+    return view('layouts.content.gopy');
+});
+Route::get('anhvantieuhoc',['uses'=>'mycontroller@baihoc']);
+Route::get('anhvan',['uses'=>'mycontroller@baihoc']);
+Route::get('tiengviet',['uses'=>'mycontroller@baihoc']);
+Route::get('toan',['uses'=>'mycontroller@baihoc']);
+
+
+Route::get('anhvantieuhoc/{mamonhoc}',['uses'=>'mycontroller@getmonhocbyma']);

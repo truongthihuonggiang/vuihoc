@@ -95,6 +95,9 @@ ul,ol {
 .bg-m5{
     background: #D1F2EB;
 }
+.bg-m6{
+    background: #F5B7B1;
+}
 .text-colors {
     color: #6c5ce7;
 }
@@ -192,7 +195,7 @@ a.move-top {
     opacity: .7;
 }
 
-.list_of_cities {
+.list {
     padding: 8px 10px;
     border: 1px solid #dee2e6;
     color: #343a40;
@@ -364,6 +367,7 @@ nav ul ul ul li {
     z-index: 10;
     position: relative;
 }
+
 }
 /* Change ' +' in order to change the Dropdown symbol */
 li>a:only-child:after {
@@ -386,7 +390,11 @@ a.reqe-button {
         margin-top: 1.5em;
     }
 }
-
+@media (min-width:992px)  {
+    .toggle3{
+        display: none;
+    }
+}
 @media all and (max-width : 991px) {
     .nav_w3ls {
         margin-top: 0;
@@ -743,6 +751,7 @@ section.about-bottom {
 .service-subgrids:hover{
     border-radius: 50px;
     background: #64BC9D;
+    transition: 0.3s;
 }
 .service-subgrids span {
     position: absolute;
@@ -870,6 +879,7 @@ p.copy-right-grids a:hover {
 
 /* newsletter */
 .news-right-w3ls input[type="text"],
+.news-right-w3ls input[type="password"],
 .news-right-w3ls input[type="email"] {
     outline: none;
     padding: 12px 15px;
@@ -881,7 +891,7 @@ p.copy-right-grids a:hover {
 }
 
 .news-right-w3ls button {
-    background: #6c5ce7;
+    background: #085C1A;
     border: none;
     color: #fff;
     font-size: 15px;
@@ -890,7 +900,9 @@ p.copy-right-grids a:hover {
     cursor: pointer;
     padding: 13px;
 }
-
+.news-right-w3ls button:hover {
+    background: #06200C;
+}
 a.button-clk {
     text-decoration: underline;
 }
@@ -925,72 +937,6 @@ h2.text-bg-click a {
 
 /* //testimonials */
 
-/* gallery */
-.gallery-grid1 img {
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    transition: 0.5s all;
-    padding: 10px;
-}
-
-.gallery-grid1:hover img {
-    -webkit-box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .3);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .3);
-}
-
-/* popup */
-.pop-overlay {
-    position: fixed;
-    top: 0px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 0ms;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 999;
-}
-
-.pop-overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.popup {
-    background: #fff;
-    -webkit-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    max-width: 550px;
-    position: relative;
-    margin: 8em auto;
-    padding: 3em 2em 2em;
-}
-
-.popup .close {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
-
-.popup .close:hover {
-    color: #f0546a;
-}
-
-/* //popup */
-/* //gallery */
-
 /* contact */
 /* contact form */
 .main_grid_contact {
@@ -999,8 +945,10 @@ h2.text-bg-click a {
 
 .main_grid_contact input[type="text"],
 .main_grid_contact input[type="email"],
+.main_grid_contact input[type="password"],
 .main_grid_contact textarea,
 .n-right-w3ls input[type="email"],
+.n-right-w3ls input[type="password"],
 .n-right-w3ls input[type="text"] {
     outline: none;
     padding: 11px 12px;
@@ -1454,4 +1402,32 @@ footer{
         font-family: starfall_blockbold,sans-serif;
         border-right: 2px solid #32cd32;
     }
+}
+
+#chatbox {
+    text-align:left;
+    margin-top: 10px;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    border:1px solid #ACD8F0;
+    overflow:auto; 
+}
+#msg{
+    margin: 0;
+    padding: 0;
+}
+
+section.about-lession {
+    margin-top: 2em;
+    position: relative;
+}
+.lession {
+    position: relative;
+    z-index: 0;
+}
+.lession:hover{
+    border-radius: 150px;
+    background: #64BC9D;
+    transition: 0.3s;
 }
