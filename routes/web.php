@@ -11,27 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('index',['uses'=>'mycontroller@monhoc']);
+Route::get('index',['uses'=>'Pagecontroller@getIndex']);
 Route::get('dangnhap', function () {
     return view('layouts.content.dangnhap');
 });
 Route::get('dangky', function () {
     return view('layouts.content.dangky');
 });
+Route::get('monhoc', ['uses'=>'Pagecontroller@getIndex']);
+
 Route::get('lienhe', function () {
     return view('layouts.content.lienhe');
 });
 Route::get('gopy', function () {
     return view('layouts.content.gopy');
 });
-Route::get('anhvantieuhoc',['uses'=>'mycontroller@baihoc']);
-Route::get('anhvan',['uses'=>'mycontroller@baihoc']);
-Route::get('tiengviet',['uses'=>'mycontroller@baihoc']);
-Route::get('toan',['uses'=>'mycontroller@baihoc']);
 
-
-Route::get('anhvantieuhoc/{mamonhoc}',['uses'=>'mycontroller@getmonhocbyma']);
+//Route::get('anhvan',['uses'=>'Pagecontroller@getLevel']);
+//Route::get('toan',['uses'=>'Pagecontroller@getLevel']);
+//Route::get('tiengviet',['uses'=>'Pagecontroller@getLevel']);
+//Route::get('anhvantieuhoc',['uses'=>'Pagecontroller@getLevel']);
+Route::get('mon',['uses'=>'Pagecontroller@getLevel']);
+Route::get('level',['uses'=>'Pagecontroller@getBaihoc']);
+Route::get('bai',['uses'=>'Pagecontroller@getPhanhoc']);

@@ -6,7 +6,7 @@
 			<div class="footer-nav">
 			<a href="index">Trang chủ</a>
 			<a href="docsach">Đọc Sách</a>
-			<a href="hocphan">Học Phần</a>
+			<a href="hocphan">Lịch sử</a>
 			<a href="gopy">Góp ý</a>
 			<a href="lienhe" id="last">Liên hệ</a>
 		</div>

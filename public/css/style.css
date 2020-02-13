@@ -58,8 +58,28 @@ ul,ol {
     margin: 0;
     padding: 0;
 }
-
-
+/*color*/
+.bg-1{
+    background :#8DF531 ;
+}
+.bg-2{
+    background: #F9EA2F;
+}
+.bg-3{
+    background:#F95F2E ;
+}
+.bg-4{
+    background:#16E34E ;
+}
+.bg-5{
+    background:#3F67F0 ;
+}
+.bg-6{
+    background:#F46316 ;
+}
+.bg-7{
+    background: #D35EF6;
+}
 /* colors code */
 .text-bl {
     color: #343a40;

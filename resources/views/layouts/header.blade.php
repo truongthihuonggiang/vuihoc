@@ -69,22 +69,8 @@
 					<input type="checkbox" id="drop" />
 					<ul class="menu mx-lg-auto">
 						<li><a href="index" class="active">Trang chủ</a></li>
-						<li><a href="#hocphan">Đọc sách</a></li>
-						<li>
-							<!-- First Tier Drop Down -->
-							<label for="drop-2" class="toggle toogle-2">Học Phần <span class="fa fa-angle-down" aria-hidden="true"></span>
-							</label>
-							<a href="#">Học Phần<span class="fa fa-angle-down" aria-hidden="true"></span></a>
-							<input type="checkbox" id="drop-2" />
-							<ul>
-					@foreach($monhoc ?? '' as $row)
-								<li><a href="{{ $row->mamonhoc.'?mamonhoc='.$row->mamonhoc }}" class="drop-text">{{ $row->ten }}</a></li>
-					@endforeach
-							</ul>
-						</li>
-						<li>
-							<a href="lichsu">Lịch sử</a>
-						</li>
+						<li><a href="docsach">Đọc sách</a></li>
+						<li><a href="lichsu">Lịch sử</a></li>
 						<li><a href="gopy">Góp Ý</a></li>
 						<li><a href="lienhe">Liên Hệ</a></li>
 					</ul>
