@@ -7,6 +7,9 @@ use App\Level;
 use App\Baihoc;
 use App\Color;
 use App\Tuvung;
+use App\Nghebai;
+use App\Cauhoilon;
+use App\Nghexepcau;
 use View;
 class Pagecontroller extends Controller
 {
@@ -30,10 +33,24 @@ class Pagecontroller extends Controller
 	}
 	public function getPhanhoc(){
 		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
 		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
 		$level = Level::all();
 		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
 		$color= Color::all();
-		return view('layouts.hocphan.phanhoc',compact('level','monhoc','baihoc','color','tuvung'));
+		return view('layouts.hocphan.phanhoc',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+	}
+	public function getTuvung(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		return view('layouts.hocphan.tuvung',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
 	}
 }

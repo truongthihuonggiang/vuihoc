@@ -13,7 +13,7 @@
 		@if( $_GET['level'] == $row->idlevel)
 		@if($row->id % 6 == $row2->id)
 				<div class="col-md-3 lession {{ $row2-> mau }}">
-					<a href="{{'bai'.'?bai='.$row->id.'?level='.$_GET['level'].'&mamonhoc='.$_GET['mamonhoc']}}">
+					<a href="{{'bai'.'?bai='.$row->id.'&level='.$_GET['level'].'&mamonhoc='.$_GET['mamonhoc']}}">
 					<div class="w3ls-about-grid py-lg-5 py-md-4 py-5 px-3">
 						<h4 class="text-wh font-weight-bold mb-3"> {{ $row -> ten}} </h4>
 					</div>
