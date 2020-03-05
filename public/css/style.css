@@ -39,7 +39,7 @@ html {
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
 }
 a{
     font-family: 'starfall_blockregular', sans-serif;
@@ -139,6 +139,21 @@ a.move-top {
     width: 34px;
     height: 34px;
     background: url(../images/move-top.png) no-repeat center #fff;
+    display: inline-block;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 0;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+a.move-back {
+    width: 34px;
+    height: 34px;
+    background: url(../images/move-back.png) no-repeat center #fff;
     display: inline-block;
     position: fixed;
     bottom: 10%;
@@ -1447,29 +1462,124 @@ section.about-lession {
 .lession {
     position: relative;
     z-index: 0;
+    border: 3px solid white;
 }
 .lession:hover{
     border-radius: 150px;
-    background: #64BC9D;
+    background: #CA33FF  ;
     transition: 0.3s;
 }
-section.about-ex{
+section.about-vocabulary{
     margin-top: 2em;
     position:relative;
+    z-index: 1;
 }
-.ex {
+.vocabulary {
     position: relative;
-    z-index: 0;
+    padding: 0; 
+    height: 350px;
 }
-.ex:hover{
+.vocabulary:hover{
+    border-radius: 20px;
+    background-color: yellow;
+
+}
+.vocabulary-nghetu {
+    position: relative;
+    padding: 0; 
+}
+.vocabulary-nghetu:hover{
+    border-radius: 20px;
+    background-color: yellow;
+
+}
+.text-vocabulary{
+    color: red;
+    text-align: center;
+    display: none;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    vertical-align: middle;
+    height: 100%;
+}
+.audio{
+    display: none;
+}
+.audio1,.audio2,.audio3{
+    display: none;
+}
+@media all and (max-width : 736px) {
+    .tu{
+        width: 33%;
+        margin: auto;
+    }
+    .tu1{
+        width:50%;
+        margin: auto;
+    }
+}
+h6{
+    text-align: center;
+    padding: 1%;
+}
+@media all and (max-width : 600px) {
+    .vocabulary {
+        height: 200px;
+    }
+}
+@media all and (max-width : 812px)  and (min-width : 601px) {
+    .vocabulary { 
+        height: 250px;
+    }
+}
+.number
+{
+    background-color:#90110D ;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.start
+{
+    background-color:#5CAE04;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+}
+.start:hover{
+    background-color: #086849;
+}
+.congratulation{
+    background-color:#F1EB26 ;
     border-radius: 10px;
-    background: #F4F40C;
-    transition: 0.3s;
-    border: 0;
+    padding: 20% 10% 20% 10%;
 }
-.px{
-    width: 23%;
-    height: auto;
-    margin: 1%;
-    padding: 0;
+.congratulation>h1{
+    color: #0F3011;
+    text-align: center;
+    font-weight: bold;
+}
+#ketqua-text{
+    color: #0F3011;
+    text-align: center;
+    font-weight: bold;
+}
+.btn-back{
+    margin-top: 10%;
+    float: right;
+    border: 0;
+    background-color:#B23B12;
+    color: white; 
+    padding: 5%;
+    border-radius: 5px;
+}
+.viettu{
+    background-color: pink;
+    margin: 1px;
+}
+.character{
+    background-color: yellow;
+    margin: 1px;
+    border-radius: 100px;
 }

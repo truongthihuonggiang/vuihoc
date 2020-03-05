@@ -34,4 +34,6 @@ Route::get('gopy', function () {
 Route::get('mon',['uses'=>'Pagecontroller@getLevel']);
 Route::get('level',['uses'=>'Pagecontroller@getBaihoc']);
 Route::get('bai',['uses'=>'Pagecontroller@getPhanhoc']);
-Route::get('xemtu',['uses'=>'Pagecontroller@getTuvung']);
+Route::get('xemtu',['uses'=>'Pagecontroller@Xemtu']);
+Route::get('nghetu',['uses'=>'Pagecontroller@Nghetu']);
+Route::get('viettu',['uses'=>'Pagecontroller@Viettu']);

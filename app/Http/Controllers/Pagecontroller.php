@@ -42,7 +42,7 @@ class Pagecontroller extends Controller
 		$color= Color::all();
 		return view('layouts.hocphan.phanhoc',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
 	}
-	public function getTuvung(){
+	public function Xemtu(){
 		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
 		$nghebai=Nghebai::all();
 		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
@@ -51,6 +51,28 @@ class Pagecontroller extends Controller
 		$level = Level::all();
 		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
 		$color= Color::all();
-		return view('layouts.hocphan.tuvung',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+		return view('layouts.hocphan.xemtu',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+	}
+	public function Nghetu(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		return view('layouts.hocphan.nghetu',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+	}
+	public function Viettu(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		return view('layouts.hocphan.viettu',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
 	}
 }

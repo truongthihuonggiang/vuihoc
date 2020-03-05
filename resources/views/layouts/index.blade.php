@@ -34,6 +34,7 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=latin-ext"
 	 rel="stylesheet">
 <!-- //Web-Fonts -->
+<script type="text/javascript" src="{{asset('jquery/hiddenimg.js')}}"></script>
 </head>
 
 <body>

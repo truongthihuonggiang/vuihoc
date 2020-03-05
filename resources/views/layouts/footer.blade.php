@@ -57,5 +57,12 @@
 <!-- //footer -->	
 	
 <!-- move top icon -->
-	<a href="#home" class="move-top text-center"></a>
+	<a href="#home" class="move-top text-center" style="z-index: 2;"></a>
+	<a onclick="goBack();" class="move-back text-center" style="z-index: 2;"></a>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	function goBack() {
+  		window.history.back();
+	}
+</script>
 <!-- //move top icon -->
