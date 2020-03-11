@@ -10,6 +10,8 @@ use App\Tuvung;
 use App\Nghebai;
 use App\Cauhoilon;
 use App\Nghexepcau;
+use App\Cauhoinho;
+use App\Dapan;
 use View;
 class Pagecontroller extends Controller
 {
@@ -74,5 +76,42 @@ class Pagecontroller extends Controller
 		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
 		$color= Color::all();
 		return view('layouts.hocphan.viettu',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+	}
+	public function Xeplaicau(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		return view('layouts.hocphan.xeplaicau',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau'));
+	}
+	public function Tracnghiem(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		$cauhoinho= Cauhoinho::where('xoa',0)->get();
+		$dapan=Dapan::where('xoa',0)->get();
+		return view('layouts.hocphan.tracnghiem',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau','cauhoinho','dapan'));
+	}
+	public function Timtu(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		$cauhoinho= Cauhoinho::where('xoa',0)->get();
+		$dapan=Dapan::where('xoa',0)->get();
+		return view('layouts.hocphan.timtu',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau','cauhoinho','dapan'));
 	}
 }

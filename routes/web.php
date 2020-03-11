@@ -37,3 +37,6 @@ Route::get('bai',['uses'=>'Pagecontroller@getPhanhoc']);
 Route::get('xemtu',['uses'=>'Pagecontroller@Xemtu']);
 Route::get('nghetu',['uses'=>'Pagecontroller@Nghetu']);
 Route::get('viettu',['uses'=>'Pagecontroller@Viettu']);
+Route::get('xeplaicau',['uses'=>'Pagecontroller@Xeplaicau']);
+Route::get('tracnghiem',['uses'=>'Pagecontroller@Tracnghiem']);
+Route::get('timtu',['uses'=>'Pagecontroller@Timtu']);

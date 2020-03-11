@@ -1555,7 +1555,7 @@ h6{
     border-radius: 10px;
     padding: 20% 10% 20% 10%;
 }
-.congratulation>h1{
+.congratulation>h4{
     color: #0F3011;
     text-align: center;
     font-weight: bold;
@@ -1581,5 +1581,48 @@ h6{
 .character{
     background-color: yellow;
     margin: 1px;
+    font-weight: bold;
+    font-size: 100%;
     border-radius: 100px;
+}
+.box{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table{
+    text-align: center;
+}
+.xeplaicau-box{
+    width: 100px;
+    width: auto;
+    height: 50px;
+    background-color: pink;
+    margin: 1px;
+    border-radius: 10px;
+}
+.xeplaicau-word{
+    width: auto;
+    height: 50px;
+    background-color: yellow;
+    margin: 1px;
+    border-radius: 10px;
+}
+.inputword-box{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bigquestion{
+    background-color: pink;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+}
+p{
+    color: black;
 }

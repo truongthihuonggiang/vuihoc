@@ -47,13 +47,11 @@
 		</div>
 		<div id="audio" class="audio">
 		</div>
-		<div id="audio-ketqua" class="audio">
-		</div>
 	</div>
 	<div class="container" id="ketqua" style="display: none;" >
 		<div class="col-md-6 mx-auto congratulation"> 
-			<h1>Congratulation!</h1>
-			<p id="ketqua-text">abc</p>
+			<h4>Congratulation!</h4>
+			<p id="ketqua-text"></p>
 			<button onclick="goBack()" class="btn-back"> OK </button>
 		</div>
 	</div>
@@ -175,7 +173,7 @@ $('.tu').click(function () {
 		{
 			$('#content').css('display', 'none');
 			$('#ketqua').css('display', 'block');
-			$('#ketqua-text').html('Số điểm của bạn là: ' + scores + '/'+ tam*100);
+			$('#ketqua-text').html('Số điểm của bạn là: ' + scores + '/'+ sourceData.length *100);
 		} 
 	} else 
 	{
