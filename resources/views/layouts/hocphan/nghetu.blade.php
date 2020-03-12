@@ -45,8 +45,7 @@
         	<div class="col-md-4 vocabulary-nghetu tu py-lg-5 py-md-4 py-1 px-3" id="second"></div>
         	<div class="col-md-4 vocabulary-nghetu tu py-lg-5 py-md-4 py-1 px-3" id="third"></div>
 		</div>
-		<div id="audio" class="audio">
-		</div>
+		<div id="audio" class="audio"></div>
 	</div>
 	<div class="container" id="ketqua" style="display: none;" >
 		<div class="col-md-6 mx-auto congratulation"> 

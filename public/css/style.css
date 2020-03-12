@@ -1617,12 +1617,55 @@ h6{
     justify-content: center;
     align-items: center;
 }
-.bigquestion{
-    background-color: pink;
+.cauhoilon{
+    background-color: #DFF1F1;
     width: 100%;
     height: auto;
     padding-left: 10px;
 }
+.pstyle{
+    color: black;
+    font-weight: bold;
+}
 p{
     color: black;
+}
+.cauhoinho{
+   width: 100%;
+   background-color: #A6F763;
+   margin-bottom: 1%;
+   padding-left: 5%;
+}
+.icon{
+    margin-right: 5%;
+}
+.cell:hover{
+    background-color: #306702;
+    color: white;
+}
+.cell-img{
+    float: left;
+}
+.cell-img>img{
+    width: 90%;
+    margin: 2%;
+}
+.cell-img:hover>img{
+    border-radius: 100px;
+}
+.noidung {
+    margin-top: 10px;
+}
+.test,.review{
+    width: 100px;
+    background-color: #065F48;
+    margin: 1%;
+    justify-content: center;
+    display: flex;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+}
+.test:hover,.review:hover{
+    background-color: #086849;
 }

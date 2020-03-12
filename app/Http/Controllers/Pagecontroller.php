@@ -91,7 +91,7 @@ class Pagecontroller extends Controller
 	public function Tracnghiem(){
 		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
 		$nghebai=Nghebai::all();
-		$cauhoilon=Cauhoilon::where('xoa',0)->where('congkhai',1)->get();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('loai','nghe')->where('congkhai',1)->get();
 		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
 		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
 		$level = Level::all();
