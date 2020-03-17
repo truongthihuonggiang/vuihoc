@@ -91,7 +91,7 @@ class Pagecontroller extends Controller
 	public function Tracnghiem(){
 		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
 		$nghebai=Nghebai::all();
-		$cauhoilon=Cauhoilon::where('xoa',0)->where('loai','nghe')->where('congkhai',1)->get();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('loai','Nghe')->where('congkhai',1)->get();
 		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
 		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
 		$level = Level::all();
@@ -100,6 +100,19 @@ class Pagecontroller extends Controller
 		$cauhoinho= Cauhoinho::where('xoa',0)->get();
 		$dapan=Dapan::where('xoa',0)->get();
 		return view('layouts.hocphan.tracnghiem',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau','cauhoinho','dapan'));
+	}
+	public function Diendapan(){
+		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();
+		$nghebai=Nghebai::all();
+		$cauhoilon=Cauhoilon::where('xoa',0)->where('loai','toan')->where('congkhai',1)->get();
+		$nghexepcau=Nghexepcau::where('xoa', 0)->where('congkhai', 1)->get();
+		$baihoc= Baihoc::where('xoa', 0)->where('congkhai',1) ->orderBy('ten', 'asc')->get();
+		$level = Level::all();
+		$monhoc = Monhoc::where('xoa',0)->where('congkhai',1)->get();
+		$color= Color::all();
+		$cauhoinho= Cauhoinho::where('xoa',0)->get();
+		$dapan=Dapan::where('xoa',0)->get();
+		return view('layouts.hocphan.diendapan',compact('level','monhoc','baihoc','color','tuvung','nghebai','cauhoilon','nghexepcau','cauhoinho','dapan'));
 	}
 	public function Timtu(){
 		$tuvung= Tuvung::where('xoa', 0)->where('congkhai', 1)->get();

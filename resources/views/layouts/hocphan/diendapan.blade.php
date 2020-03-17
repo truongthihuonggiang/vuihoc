@@ -4,9 +4,8 @@
 	class Cauhoilon
 	{
 		public $id;
-		public $noidung;
+		public $hotro;
 		public $amthanh;
-		public $loai;
 		public $hinhanh;
 	}
 	class Cauhoinho
@@ -33,9 +32,8 @@
 			{
 				$ds = new Cauhoilon();
 				$ds->id =$row->id;
-				$ds->noidung=$row->hotro;
+				$ds->hotro=$row->hotro;
 				$ds->amthanh=$row->amthanh;
-				$ds->loai=$row->loai;
 				$ds->hinhanh=$row->hinhanh;
 				array_push($a, $ds);
 			}
@@ -56,11 +54,12 @@
 				$ds->id =$i;
 				$ds->idchn= $row3->id_cauhoinho;
 				$ds->noidung=$row3->noidungtl;
-				$ds->hinhanh=$row3->hinhanhtl;
 				$ds->trangthai=$row3->dung;
 				array_push($c, $ds);
 			}
+
 ?>
+
 <div class="container " id= "content">
 	<div class="row  mx-auto">
 		<div class=" col-md-3 py-lg-5 py-md-4 py-1 px-3 number">Điểm: 
@@ -69,17 +68,10 @@
 		<div class="start col-md-2 py-lg-5 py-md-4 py-1 px-3" id="play">
           	<i class="fa fa-play" aria-hidden="true" ></i>Start
         </div>
-	    <div class="review" id="review" style="display: none;">Review</div>
-	    <div onclick="goBack()" class="back" id="back" style="display: none;"> 
-	    	Back 
-		</div>
-		<div>
-	   		<audio class="" id ="myAudio"></audio>
-			<div class="" id="reviewContent" style="display: none;"></div>
-   		</div>
+        <audio class="" id ="myAudio"></audio>
     	<div class="container noidung" id="showQuestionID">
-
-		</div>
+    	</div>
+    	<audio class="" id ="audio"></audio>
 	</div>
 </div>
 	<div class="container" id="ketqua" style="display: none;" >
@@ -91,17 +83,16 @@
 		</div>
 	</div>
 
-
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	let sourceData = {
-		big: <?php echo json_encode($a); ?>,
-		small: <?php echo json_encode($b); ?>,
-		answer: <?php echo json_encode($c); ?>
-	}
+			big: <?php echo json_encode($a); ?>,
+			small: <?php echo json_encode($b); ?>,
+			answer: <?php echo json_encode($c); ?>
+		}
 	var question = {};
 	var scores = 0;
-question.randomNumber = (min, max) => Math.floor(Math.random() * max) + min;
+//question.randomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 question.fillArray = () => {
 	let arrs = [];
 	let length = Object.keys(sourceData).length;
@@ -114,9 +105,8 @@ question.getBigData = () => {
 	{	
 		let tamchl = [];
 		tamchl.push(sourceData.big[i]['id']);
-		tamchl.push(sourceData.big[i]['noidung']);
+		tamchl.push(sourceData.big[i]['hotro']);
 		tamchl.push(sourceData.big[i]['amthanh']);
-		tamchl.push(sourceData.big[i]['loai']);
 		tamchl.push(sourceData.big[i]['hinhanh']);
 		chl.push(tamchl);
 	}
@@ -152,41 +142,13 @@ question.getAnswerData = (chn) => {
 				let tamda =[];
 				tamda.push(sourceData.answer[j]['idchn']);
 				tamda.push(sourceData.answer[j]['noidung']);
-				tamda.push(sourceData.answer[j]['hinhanh']);
 				tamda.push(sourceData.answer[j]['trangthai']);
-				tamda.push(j);
 				da.push(tamda);
 			} 
 		}
 	}
 	return da;
 }
-
-question.playTrue = () => {
-	var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'sounds/amthanhkhac/chondung.mp3');   
-	audioElement.play();
-}
-
-question.playFalse = () => {
-	var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'sounds/amthanhkhac/chonsai.mp3');   
-	audioElement.play();
-}
-
-question.playAudio = (text) => {
-	var audioElement = document.getElementById('myAudio');
-    audioElement.setAttribute('src', 'sounds/' + text);   
-	audioElement.play();
-	return audioElement;
-}
-
-question.pauseAudio = (audioElement) => {
-	audioElement.pause();
-	audioElement.controls = true;
-	audioElement.currentTime = 0;	
-}
-
 question.mixData = (datas) => {
 	var currentIndex = datas.length, temporaryValue, randomIndex;
 	while (0 !== currentIndex) {
@@ -198,34 +160,44 @@ question.mixData = (datas) => {
 	}
 	return datas;
 }
+question.playAudio = (text) => {
+	var audioElement = document.getElementById('myAudio');
+    audioElement.setAttribute('src', 'sounds/' + text);   
+	audioElement.play();
+	return audioElement;
+}
+question.playTrue = () => {
+	var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'sounds/amthanhkhac/chondung.mp3');   
+	audioElement.play();
+}
 
-question.showQuestion = (bigQuestion,audio,img, smallQuestion,idsmall, answers, isClean = true) => {
+question.playFalse = () => {
+	var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'sounds/amthanhkhac/chonsai.mp3');   
+	audioElement.play();
+}
+question.showQuestion = (bigQuestion,audio,img, smallQuestion,idsmall,isClean = true) => {
 	let div = '';
 	let dem =0 ;
 	if (bigQuestion !== '' && img === '' && audio ==='') 
 		div += `<div class="row cauhoilon mx-auto">
 			<div class="noidungcauhoilon">${bigQuestion}</div></div>`; 
 
-	if (bigQuestion !== '' && img !== '' && audio !=='' || bigQuestion === '' && img !== '' && audio !=='' ) 
+	if (bigQuestion !== '' && img !== '' && audio !=='') 
 		div += `<div class="row cauhoilon mx-auto">
-			<div class="noidungcauhoilon"></div><img class="titleImg" src="images/hinhchl/${img}"></div>`; 
+			<div class="noidungcauhoilon" ></div><img class="titleImg" src="images/hinhchl/${img}"></div>`; 
+	if ( bigQuestion === '' && img !== '' && audio !=='' )
+		div += `<div class="row cauhoilon mx-auto">
+			<div class="noidungcauhoilon"></div><img class="titleImg" src="images/hinhchl/${img}"></div>`;
 
-	if (bigQuestion !== '' && img !== '' && audio ==='') 
+	if ( bigQuestion !== '' && img !== '' && audio ==='' )
 		div += `<div class="row cauhoilon mx-auto">
-			<div class="noidungcauhoilon">${bigQuestion}</div><img class="titleImg" src="images/hinhchl/${img}"></div>`; 
+			<div class="noidungcauhoilon">${bigQuestion}</div><img class="titleImg" src="images/hinhchl/${img}"></div>`;
 
 		div += '<div class="cauhoinho" clicked="NO" id="smallQuestion'+idsmall+'">';
 		div += '<p class="pstyle"><i class="fa fa-question-circle"> </i>' + smallQuestion + '</p>';
-	for (const answer of answers) 
-	{
-		isTrue = (answer[3] == 1);
-		if (answer[1].trim() != '')
-			div += '<div class="cautraloi cell" isClick="false" isTrue="' + isTrue +'" id ="'+idsmall+dem+'"><i class="fa fa-caret-right icon"></i> ' + answer[1] + ' </div>';
-		else 
-			div += '<div class="cautraloi cell-img col-md-4" isClick="false" isTrue="' + isTrue + '" id ="'+idsmall+dem+'"><i class="fa fa-caret-right icon"></i><img src="images/hinhtl/'+ answer[2] + '" /></div>';
-		dem++;
-		
-	}
+		div += '<input type="text" id="text'+idsmall+'" class="inputAnswer"><button class="checkAnswer" onclick="check(this.id);" id="check'+idsmall+'">Check</button>';
 	div += '<div style="clear: both;"></div></div>';
 	if (isClean) $('.noidung').html(div);
 	else $('.noidung').append(div);
@@ -236,22 +208,18 @@ question.selectQuestion = () => {
 		let bigQuestion = chl[currentQuestion];
 		let smallQuestion = [];
 		for (smallQuestion of chn) if (bigQuestion[0] == smallQuestion[1]) break;
-		let answers = [];
-		for (const answer of da) if (answer[0] == smallQuestion[0]) answers.push(answer);
-		question.showQuestion(bigQuestion[1],bigQuestion[2],bigQuestion[4], smallQuestion[2],smallQuestion[0], answers);
-		if (bigQuestion[3] == "Nghe" && bigQuestion[2]!='') audioElement = question.playAudio(bigQuestion[2]); 
+		question.showQuestion(bigQuestion[1],bigQuestion[2],bigQuestion[3], smallQuestion[2],smallQuestion[0]);
+		if (bigQuestion[2]!='') audioElement = question.playAudio(bigQuestion[2]); 
 		currentQuestion++;
-	} else {
-		$('#reviewContent').html('<p>'+chl[0][1]+'</p>');
+	} 
+	else 
+	{
+		let bigQuestion = chl[currentQuestion];
 		for (const smallQuestion of chn) 
 		{
-			let answers = [];
-			for (const answer of da) 
-				if (smallQuestion[0] == answer[0]) answers.push(answer);
-			question.showQuestion('','','',smallQuestion[2],smallQuestion[0], answers, false);
+			question.showQuestion(bigQuestion[1],bigQuestion[2],bigQuestion[3],smallQuestion[2],smallQuestion[0]);
 		}
 	}
-
 }
 question.next = () => {
 	selectedQuestions = [];
@@ -263,40 +231,33 @@ question.next = () => {
 question.updateScores = (scores) => {
 	$('#scores').text(scores);
 }
+
 let chl = question.mixData(question.getBigData());
 let chn = question.getSmallData();
 if (chl.length > 1) chn = question.mixData(chn);
 let da = question.mixData(question.getAnswerData(chn));
 let currentQuestion = 0;
-let audioElement = '';
-let questionRemaining = [];
-var numberOfClick = 0;
-console.log(chl, chn, da);
-let mangtam=[];
-
+	//console.log(chl);
+	//console.log(chn);
+	//console.log(da);
 $('#play').click(function (){
-	if (chl.length == 1) 
-	{
-		$('#review').css('display', 'flex');
-	}
 	$('#play').css('display', 'none');
 	if (chl.length == 1) audioElement =question.playAudio(chl[0][2]);
 	question.selectQuestion();
 });
-$('#showQuestionID').on('click', '.cautraloi', function () {
-	let idanswer = (this.id);
-	let idl = document.getElementById(idanswer).parentNode.id;
-	
-	if ($(this).attr('isClick') == "false")
-	{
-		if(chl.length>1) //tiếng việt, toán
-		{
-			if( $(this).attr('isTrue') == "true") 
-			{
-				$(this).attr('isClick', 'true');
-				scores += 100;
-				$('#'+idanswer).css('background-color','#42B00A');
-				question.playTrue();
+function check(clicked_id) {
+ 	//console.log(clicked_id);
+ 	let id = clicked_id.slice(5);
+ 	let text = $('#text'+id).val();
+ 	//console.log(text);
+ 	for(i=0;i<da.length;i++)
+ 	{
+ 		if (da[i][0]==id)
+ 		{
+ 			if(text == da[i][1])
+ 			{
+ 				scores += 100;
+ 				question.playTrue();
 				question.updateScores(scores);
 				if (chl.length > 1 && currentQuestion < chl.length - 1) question.next();
 				else
@@ -305,12 +266,10 @@ $('#showQuestionID').on('click', '.cautraloi', function () {
 					$('#ketqua').css('display', 'block');
 					$('#ketqua-text').html('Số điểm của bạn là: ' + scores + '/'+ chn.length *100);
 				}
-			}
-			else
-			{
-				$(this).attr('isClick', 'true');
-				$('#'+idanswer).css('background-color','red');
-				question.playFalse();
+ 			}
+ 			else
+ 			{
+ 				question.playFalse();
 				if (chl.length > 1 && currentQuestion < chl.length - 1) question.next();
 				else
 				{
@@ -318,58 +277,9 @@ $('#showQuestionID').on('click', '.cautraloi', function () {
 					$('#ketqua').css('display', 'block');
 					$('#ketqua-text').html('Số điểm của bạn là: ' + scores + '/'+ chn.length *100);
 				}
-			}
-		}
-		if(chl.length==1) //tiếng anh
-		{
-		if($('#'+idl).attr('clicked') == 'NO')
-		{
-			if( $(this).attr('isTrue') == "true") 
-			{
-				numberOfClick++;
-				$(this).attr('isClick', 'true');
-				scores += 100;
-				$('#'+idanswer).css('background-color','#42B00A');
-				question.playTrue();
-				question.updateScores(scores);
-				$('#'+ idl).attr('clicked','OK');
-			}
-			else
-			{
-				numberOfClick++;
-				$(this).attr('isClick', 'true');
-				$('#'+idanswer).css('background-color','red');
-				question.playFalse();
-				$('#'+ idl).attr('clicked','OK');
-			}
-			if (numberOfClick == chn.length)
-				{
-					question.pauseAudio(audioElement);
-					$('#content').css('display', 'none');
-					$('#ketqua').css('display', 'block');
-					$('#ketqua-text').html('Số điểm của bạn là: ' + scores + '/'+ chn.length *100);
-					$('#result').css('display','flex');
-				}
-		}
-		}
-	}
-});
-$('#review').click(() => {
-	$('#reviewContent').css({'display': 'block', 'margin-top': '7px'});
-	question.pauseAudio(audioElement);
-	$('.noidung').css('display','none');
-	$('#review').css('display','none');
-	$('#back').css('display','flex');
-});
-$('#result').click(() => {
-	$('#content').css('display', 'block');
-	$('#ketqua').css('display', 'none');
-	$('#reviewContent').css({'display': 'block', 'margin-top': '7px'});
-	$('#review').css('display','none');
-	$('#back').css('display','flex');
-});
-function goBack() {
-  window.history.back();
+ 			} 
+ 		}
+ 	}
 }
 </script>
 @endsection

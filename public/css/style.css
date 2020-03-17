@@ -1656,7 +1656,7 @@ p{
 .noidung {
     margin-top: 10px;
 }
-.test,.review{
+.back,.review{
     width: 100px;
     background-color: #065F48;
     margin: 1%;
@@ -1666,6 +1666,61 @@ p{
     align-items: center;
     border-radius: 10px;
 }
-.test:hover,.review:hover{
-    background-color: #086849;
+.back:hover,.review:hover{
+    background-color: green;
+}
+#reviewContent{
+    background-color: pink;
+}
+@media all and (max-width : 899px) {
+    .cell-img>img{
+        width: 50%;
+        margin: 2%;
+    }
+    .titleImg{
+        width: 80%;
+    }
+}
+/*tìm từ */
+.timtu{
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+.timtu-box>img{
+    width: 100%;
+    height: 100px;
+}
+.timtu-box{
+    float: left;
+    width: 20%;
+    height: 100px;
+    background-color: pink;;
+    margin-bottom: 1%;
+}
+.timtu-box:hover{
+    border-radius: 100px;
+}
+
+/*Điền đáp án*/
+.inputAnswer{
+    border-radius: 10px;
+    border: 0;
+    width: 50%;
+    height: 50px;
+    margin: 1% auto 1% 0;
+}
+.noidungcauhoilon{
+    width: 100%;
+}
+.checkAnswer{
+    border: 0;
+    margin: 2%;
+    padding: 2%;
+    background-color: #163905;
+    border-radius: 20px;
+    color: white;
 }

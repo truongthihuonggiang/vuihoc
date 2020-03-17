@@ -12,9 +12,7 @@
 */
 
 Route::get('index',['uses'=>'Pagecontroller@getIndex']);
-Route::get('dangnhap', function () {
-    return view('layouts.content.dangnhap');
-});
+
 Route::get('dangky', function () {
     return view('layouts.content.dangky');
 });
@@ -40,3 +38,8 @@ Route::get('viettu',['uses'=>'Pagecontroller@Viettu']);
 Route::get('xeplaicau',['uses'=>'Pagecontroller@Xeplaicau']);
 Route::get('tracnghiem',['uses'=>'Pagecontroller@Tracnghiem']);
 Route::get('timtu',['uses'=>'Pagecontroller@Timtu']);
+Route::get('diendapan',['uses'=>'Pagecontroller@Diendapan']);
+
+//đăng nhập
+Route::get('dangnhap',['uses'=>'Admincontroller@getNguoidung']);
+Route::post('dangnhap',['uses'=>'Admincontroller@Kiemtradangnhap'])->name('dangnhap');

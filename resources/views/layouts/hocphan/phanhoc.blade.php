@@ -72,7 +72,7 @@ if($i>0)
 }
 $i=0;
 foreach ($cauhoilon as $row3) 
-if($_GET['bai']==$row3->id_bai and $row3->loai=="Toan")
+if($_GET['bai']==$row3->id_bai and $row3->loai=="toan")
 	{
 		$i++;
 	}
